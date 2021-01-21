@@ -6,7 +6,7 @@ var redrawNotes=function(){
     notes.forEach(function(note){
         var li=document.createElement('li')
         ul.appendChild(li)
-        li.appendChild(document.createTextNode(note.contenet))
+        li.appendChild(document.createTextNode(note.content))
     })
 
     var notesElement=document.getElementById("notes")
@@ -27,7 +27,7 @@ xhttp.onreadystatechange=function(){
     }
 }
 
-xhttp.open("GET","/data.json",true)
+xhttp.open("GET",'/data.json',true)
 xhttp.send()
 
 var sendToServer = function(note){
@@ -44,16 +44,18 @@ var sendToServer = function(note){
 
 window.onload = function(e){
     var form=document.getElementById("notes_form")
+    console.log(form);
     form.onsubmit=function(e){
         e.preventDefault()
 
         var note={
-            Content:e.target.elements[0].value,
+            content:e.target.elements[0].value,
             date:new Date()
         }
-
-        notes.push(note)
-        e.target.elements[0].value=""
+        console.log(note);
+        notes.push(note);
+        console.log(notes);
+        e.target.elements[0].value="";
         redrawNotes()
         sendToServer(note)
     }
