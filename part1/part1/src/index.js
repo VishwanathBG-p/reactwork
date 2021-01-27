@@ -47,6 +47,8 @@ const App=()=>{
   )
 }
 */
+//using props
+/*
 const Hello = (props) => {
   return (
     <div>
@@ -69,15 +71,31 @@ const App = () => {
     </div>
   )
 }
-
+*/
 const App=()=>{
-  const corse='half Stack application deelopment'
+  const course='half Stack application deelopment'
   const part1='Fundamentals Of React'
   const exercises1=10
   const part2="using the props to pass the data"
   const exercises2=7
   const part3="State of component"
   const exercises3=14
+
+  return(
+    <div>
+      <h1>{course}</h1>
+      <p>
+        {part1}{exercises1}
+      </p>
+      <p>
+        {part2}{exercises2}
+      </p>
+      <p>
+        {part3}{exercises3}
+      </p>
+      <p>Number of exercises{exercises1+exercises2+exercises3}</p>
+    </div>
+  )
 
   
 }
