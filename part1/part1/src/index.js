@@ -1,5 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+
 
 //display the helloworld using react
 /*const App=()=>(
@@ -72,6 +71,7 @@ const App = () => {
   )
 }
 */
+/*
 const App=()=>{
   const course='half Stack application deelopment'
   const part1='Fundamentals Of React'
@@ -99,8 +99,63 @@ const App=()=>{
 
   
 }
+*/
+/*
+const Hello=(props)=>{
+  const {name,age}=props
+
+  const bornYer=()=> new Date().getFullYear() -age
+
+  
+  return(
+    <div>
+      <p>
+        Hello {name} you are {age}
+      </p>
+      <p>
+        your bronyear {bornYer()}
+      </p>
+    </div>
+  )
+}
+
+const App=()=>{
+  
+ 
+  return(
+    <div>
+      <Hello name={'petere'}  age={24}/>
+      
+    </div>
+  )
+}
 
 ReactDOM.render(<App/>,document.getElementById('root'))
 
+*/
 
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const App=( props)=>{
+  const {counter} = props
+    return(
+        <>
+        <h1>Hello</h1>
+        <div>{counter}</div>
+        </>
+    )
+}
+
+let counter=1
+
+const refres=()=>{
+ReactDOM.render(<App counter={counter}/>,document.getElementById('counter'))
+}
+setInterval(()=>{
+refres()
+counter+=1
+
+},1000)
 
